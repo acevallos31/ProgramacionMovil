@@ -15,6 +15,16 @@ export default function App() {
     console.log(`El componente se ha renderizado`);
   }, [contador]);
 
+/*
+ * useEffect con arreglo de dependencias
+ * este useEffect se ejecuta cuando cambia el valor de contador.
+ * lo usamos cuando queremos ejecutar una acción al cambiar
+ * una variable específica del componente.
+ */
+useEffect(() => {
+  console.log(`El contador ha cambiado: ${contador}`);
+}, [contador]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Tarea useEffect</Text>
