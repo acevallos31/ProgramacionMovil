@@ -1,9 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   const [contador, setContador] = useState(0);
+
+  /*
+   * useEffect sin arreglo de dependencias
+   * este useEffect se ejecuta después de cada render del componente.
+   * se usa cuando necesitamos ejecutar una acción cada vez
+   * que el componente se actualiza, sin depender de una variable específica.
+   */
+  useEffect(() => {
+    console.log(`El componente se ha renderizado`);
+  }, [contador]);
 
   return (
     <View style={styles.container}>
